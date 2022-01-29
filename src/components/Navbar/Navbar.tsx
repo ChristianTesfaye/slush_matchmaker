@@ -5,16 +5,20 @@ import axios from '../../modules/axios/axios_wrapper'
 import "./navbar.scss"
 import { useNavigate } from 'react-router-dom'
 
-const Cookies = require('js-cookie')
+// const Cookies = require('js-cookie')
+// import Cookies from '../../js.cookie.min.js'
+// import {useCookies} from 'react-cookie'
+import parseCookie from '../../services/utils'
 
 const Navbar: React.FC = () => {
     const navigate = useNavigate();
+    // const [cookies, setCookie, removeCookie] = useCookies([]);
 
     const logout: Function = (e: Event):void => {
         e.preventDefault();
         axios.delete("/auth/logout")
         .then(response => {
-            Cookies.set("jwt", "")
+            document.cookie="jwt="
             auth?.setUser!(null)
             navigate("/login")
         })

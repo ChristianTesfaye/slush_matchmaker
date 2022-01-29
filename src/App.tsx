@@ -13,7 +13,7 @@ import Home from './layouts/Home/Home';
 import axios from './modules/axios/axios_wrapper'
 import { useNavigate, useLocation } from 'react-router-dom'
 import RequestHistory from './pages/requests/RequestHistory';
-const Cookies = require('js-cookie')
+// import Cookies from './js.cookie.min.js'
 
 function App() {
   const auth = useAuth()

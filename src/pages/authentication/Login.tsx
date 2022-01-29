@@ -12,7 +12,11 @@ import { toast, ToastContainer } from 'react-toastify'
 import LoadingSpinner from '../../components/Spinner/Spinner'
 import 'react-toastify/dist/ReactToastify.min.css';
 
-const Cookies = require("js-cookie")
+// const Cookies = require("js-cookie")
+// import Cookies from '../../js.cookie.min.js'
+// import { useCookies } from 'react-cookie'
+import parseCookie from '../../services/utils'
+
 
 const LoginPage: React.FC = () => {
     const authContext = React.useContext(AuthContext)
@@ -23,7 +27,8 @@ const LoginPage: React.FC = () => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const navigate = useNavigate();
-
+    // const [cookies, setCookie, removeCookie] = useCookies([]);
+    const cookies = parseCookie(document.cookie)
     const validateInput = ():string => {
         if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))) return 'Invalid Email'
         if (!password) return 'Please enter a Password'
@@ -48,7 +53,7 @@ const LoginPage: React.FC = () => {
             // setAuthContext({...response.data.user, token: response.data.token})
             // authContext = {...response.data.user, response.data.token }
             auth?.setToken!("456467")
-            Cookies.set("jwt", response.data.token)
+            document.cookie=`jwt=${response.data.token}`
             auth?.setUser!(response.data.user)
             console.log(auth?.token)
             navigate("/app")
@@ -81,7 +86,7 @@ const LoginPage: React.FC = () => {
     }
 
     async function loginFromCookies() {
-        const jwt = Cookies.get("jwt")
+        const jwt = cookies["jwt"]
         if(jwt){
             axios.get("/auth/user")
             .then(response => {

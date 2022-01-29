@@ -4,7 +4,10 @@ import { Person } from "../types/Person";
 import { useEffect } from 'react'
 import axios from "../modules/axios/axios_wrapper";
 import { useLocation, useNavigate } from 'react-router-dom'
-const Cookies = require('js-cookie')
+import parseCookie from '../services/utils'
+// const Cookies = require('js-cookie')
+// import Cookies from '../js.cookie.min.js'
+// import { useCookies } from 'react-cookie'
 
 interface AuthContextInterface extends Person{
   token?: string,
@@ -21,10 +24,11 @@ interface Props {
 const AuthProvider: React.FC<Props> = ({ children }: Props) => {
     const [user, setUser] = React.useState<Person | null>(null);
     const [token, setToken ] = React.useState("")
-
+    // const [cookies, setCookie, removeCookie] = useCookies([]);
+    const cookies = parseCookie(document.cookie)
 
     async function loginFromCookies() {
-        const jwt = Cookies.get("jwt")
+        const jwt = cookies["jwt"]
         if(jwt){
             axios.get("/auth/user")
             .then(response => {

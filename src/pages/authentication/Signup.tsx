@@ -12,9 +12,14 @@ import LoadingSpinner from '../../components/Spinner/Spinner'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css';
 
-const Cookies = require("js-cookie")
+// const Cookies = require("js-cookie")
+// import Cookies from '../../js.cookie.min.js'
+// import { useCookies } from 'react-cookie'
+// import parseCookie from '../../services/utils'
+
 
 const SignupPage: React.FC = () => {
+    // const [cookies, setCookie, removeCookie] = useCookies([]);
     const authContext = React.useContext(AuthContext)
     const auth = useAuth();
     const [email, setEmail] = useState("");
