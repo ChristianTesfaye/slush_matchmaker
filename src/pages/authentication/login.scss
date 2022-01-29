@@ -1,0 +1,131 @@
+
+.login-component {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(217deg, rgba(63, 62, 62, 0.8), rgba(156, 149, 149, 0) 70.71%),
+    linear-gradient(127deg, rgba(196, 196, 196, 0.8), rgba(61, 58, 58, 0.596) 70.71%),
+    linear-gradient(336deg, rgba(52, 52, 53, 0.8), rgba(24, 24, 26, 0) 70.71%);
+    display: flex;
+    // place-content: center;
+    justify-content: center;
+    overflow: auto;
+    overflow-x: hidden;
+
+    .login-modal {
+        max-width: 450px;
+        min-width: 400px;
+        margin: 5em 0em;
+        /* background-color: rgba(0, 0, 0, 0.733); */
+        background: rgba(39, 39, 39, 0.932);
+        padding: 1em 0em 0em;
+        // border-radius: 20px;
+        border: 1px solid;
+        border-bottom-left-radius: 0;
+        backdrop-filter: blur(10px);
+        border-bottom-right-radius: 0;
+        height: fit-content;
+    }
+    
+    .bottom {
+        border-top-left-radius: 80px;
+        background-color: white;
+        margin: 3em 0em 0em 0em;
+        display: flex;
+        padding: 40px;
+        width: 100%;
+        /* overflow: scroll; */
+        padding-bottom: 4em;
+    }
+    
+    .bottom form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        label {
+            width: 80%;
+        }
+    }
+    
+    .top {
+        width: 50px;
+        align-items: center;
+        height: 50px;
+        color: white;
+        margin: 1em;
+        display: flex;
+    }
+    
+    .top > img{
+        width: 100px;
+        height: 100px;
+    }
+    
+    .modal-title {
+        font-size: 1.3em;
+    }
+    
+    .action-buttons {
+        width: 100%;
+    }
+    
+    .action-buttons > button {
+        width: 80%;
+        margin: 0em auto;
+    }
+    
+    input[type=text], input[type=password], input[type=email], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+      
+    button {
+        width: 40%;
+        background-color: #4eb9d6;
+        color: white;
+        padding: 14px 10px;
+        margin: 16px 0;
+        min-height: 50px;
+        max-width: 200px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 26px auto 4px;
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .login-modal {
+            max-width: 450px;
+            min-width: 300px;
+        }
+    }
+
+    button[disabled]{
+        background-color: grey;
+        cursor:initial;
+    }
+
+    .hidden {
+        visibility: hidden;
+    }
+    .spinner {
+        margin: auto;
+    }
+
+    .submit-button {
+        overflow: hidden;
+        > * {
+            margin: auto
+        }
+    }
+    
+    .form-actions {
+        text-align: center;
+    }
+}

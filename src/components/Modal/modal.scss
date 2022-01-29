@@ -1,0 +1,55 @@
+.default-confirmation-box {
+    min-width: 40vw;
+    position: initial;
+    .modal-title {
+        margin: 0.8em 0em 1em;
+        text-align: center;
+        
+    }
+
+    .action-buttons {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .action-buttons > button {
+        /* border-radius: 4px; */
+        background-color: transparent;
+        padding: 0.4em 1.5em;
+        margin: 0px 10px;
+        align-self: flex-end;
+        -webkit-transition: background-position 1s;
+        -moz-transition: background-position 1s;
+        transition: background-position 0.2s;
+        background-size: 200%;
+        background-position: left;
+    }
+    
+    .action-buttons .confirm-button {
+        border: 1px solid green;
+        color: green;
+        background-image: linear-gradient(to left, green 50%, white 50%);
+    }
+
+    .action-buttons .cancel-button {
+        border: 1px solid black;
+        color: black;
+        background-image: linear-gradient(to left, black 50%, white 50%);
+    }
+    
+    
+    .custom-button:not(.disabled):not(.loading):hover{
+        background-position: -100% 0;
+        color: white;
+        cursor: pointer;
+    }
+    
+    .action-buttons button.disabled {
+        border: 1px solid lightgray !important;
+        color: gray !important;
+    }
+
+    .hidden {
+        visibility: hidden;
+    }
+}

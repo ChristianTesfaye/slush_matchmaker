@@ -1,0 +1,79 @@
+.request-history-component {
+    position: relative;
+    background-color: white;
+    max-width: 900px;
+    margin: 2em auto 0;
+
+    .title-container {
+        text-align: center;
+        padding: 1.5em 0 0 0;
+        font-size: 1.5em;
+        color: gray;
+        
+        p {
+            margin: 0;
+        }
+    }
+    .requests {
+        display: flex;
+        min-height: 70vh;
+        position: relative;
+
+        @media only screen and (max-width:      720px){
+            flex-direction: column;
+        }
+
+        .incoming {
+            flex: 1 1 45%;
+            padding: 2em;
+        }
+
+        .spacer {
+            flex: 1 1 10%;
+            border-left: 1px solid lightgray;
+            bottom: 75px;
+            position: absolute;
+            left: 50%;
+            margin-left: -3px;
+            top: 115px;
+
+            @media only screen and (max-width: 900px){
+                display: none;
+            }
+        }
+
+        .outgoing {
+            flex: 1 1 45%;
+            padding: 2em;
+
+            
+        }
+
+        .section-title {
+            color: gray;
+            text-align: center;
+        }
+        
+        
+        .request-list {
+            .person-tile {
+                margin: 15px 0px;
+                min-width: initial;
+                .person-name {
+                    font-size: 0.9em;
+                    line-height: 0.9em;
+                }
+
+                .caption {
+                    font-size: 0.9em;
+                }
+            }
+        }
+
+        .spinner {
+            margin: auto;
+        }
+    }
+
+
+}

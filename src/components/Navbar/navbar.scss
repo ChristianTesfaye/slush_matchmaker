@@ -1,0 +1,59 @@
+.navbar-component {
+    min-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    align-items: center;
+    padding: 0em 1em;
+    z-index: 12;
+
+    @media only screen and (max-width: 480px) {
+        flex-direction: column;
+        backdrop-filter: blur(15px);
+        border-bottom: 1px solid lightgray;
+
+    }
+    
+    a {
+        background-color: transparent;
+        color: rgb(105, 105, 105);
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        > * {
+            margin: 0em 1em;
+            height: 100%;
+        }
+
+        @media only screen and (max-width: 480px) {
+            margin: 0.5em;
+        }
+    }
+
+    .left {
+        @media only screen and (max-width: 480px) {
+            margin-top: 0.5em;
+        }
+    }
+
+    .nav-item {
+        border: 1px solid lightgrey;
+        padding: 2px 7px;
+        text-decoration: none;
+        font-size: 16px;
+        height: 100%;
+        transition: ease border-color 0.5s;
+        background-color: transparent;
+        color: rgb(105, 105, 105);
+        text-decoration: none;
+    }
+
+    .nav-item:hover {
+        border-color: black;
+        color:black;
+    }
+}

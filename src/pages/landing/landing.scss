@@ -1,0 +1,45 @@
+
+.landing-component {
+    height: 100%;
+    width: 100%;
+    .content-wrapper {
+        max-width: 900px;
+        margin: 2em auto 0;
+        background-color: white;
+        min-height: 50vh;
+        // border-radius: 20px;
+        -webkit-box-shadow: 5px 5px 50px 5px rgba(0,0,0,0.2); 
+        box-shadow: 5px 5px 50px 5px rgba(0,0,0,0.2);
+        padding: 1.5em;
+    
+        .header {
+            margin: 1em auto;
+            text-align: center;
+            font-size: 1.8em;
+            // font-weight: bold;
+            color: grey;
+        }
+
+        .people-list {
+            display: grid;
+            place-content: center;
+        
+            .person-tile {
+                // min-width: 450px;
+                // min-height: 100px;
+                margin: 10px;
+                transition: ease margin-right 0.2s;
+
+                
+            }
+
+            .person-tile:hover {
+                border-color: black;
+                margin-right: -5px;
+            }
+        }
+
+        
+    }
+    
+}

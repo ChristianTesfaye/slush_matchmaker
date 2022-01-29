@@ -1,0 +1,61 @@
+@import './login.scss';
+
+.signup-component {
+    form {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        > * {
+            padding: 0em 10px;
+            flex: 1 1 50%;
+        }
+    }
+
+    form label:nth-child(-n+3) {
+        // font-weight:bold;
+        flex: 1 1 30%;
+    }
+
+
+
+    input[type=text], input[type=password], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+
+    .login-modal {
+        min-width: 800px !important;
+    }
+
+    @media only screen and(max-width: 820px) {
+        form {
+            flex-direction: row !important;
+            > * {
+                padding: 0em 10px;
+                flex: 1 1 50%;
+            }
+        }
+
+        .login-modal {
+            min-width: unset !important;
+        }
+    }
+
+    @media only screen and(max-width: 600px) {
+        .login-modal {
+            min-width: 320px !important;
+        }
+        form {
+            flex-direction: column !important;
+            flex-wrap: nowrap !important;
+        }
+
+    }
+
+
+}
