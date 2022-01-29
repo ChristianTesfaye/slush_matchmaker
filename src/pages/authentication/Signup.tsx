@@ -10,7 +10,8 @@ import { useAuth } from '../../providers/AuthProvider'
 import { useNavigate } from 'react-router-dom'
 import LoadingSpinner from '../../components/Spinner/Spinner'
 import { toast, ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.min.css';
+// import 'react-toastify/dist/ReactToastify.min.css';
+import 'react-toastify/scss/main.scss'
 
 // const Cookies = require("js-cookie")
 // import Cookies from '../../js.cookie.min.js'
