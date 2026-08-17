@@ -24,7 +24,7 @@ jobs:
           # 1. payload signatures (C2 beacon header, C2 paths, attacker address)
           while IFS= read -r f; do hit "implant signature" "$f"; done < <(
             grep -rlE 'Sec-V|0x/cls|0x/ls|6f0121063e' . \
-              --exclude-dir=.git --exclude-dir=node_modules 2>/dev/null)
+              --exclude-dir=.git --exclude-dir=node_modules --exclude=implant-scan.yml 2>/dev/null)
 
           # 2. VS Code task that runs on folder open
           while IFS= read -r f; do hit "auto-run task (runOn folderOpen)" "$f"; done < <(
@@ -34,7 +34,7 @@ jobs:
           # 3. the setting that suppresses VS Code's confirmation prompt
           while IFS= read -r f; do hit "task.allowAutomaticTasks enabled" "$f"; done < <(
             grep -rlE '"task\.allowAutomaticTasks"\s*:\s*(true|"on")' . \
-              --exclude-dir=.git --exclude-dir=node_modules 2>/dev/null)
+              --exclude-dir=.git --exclude-dir=node_modules --exclude=implant-scan.yml 2>/dev/null)
 
           # 4. the dropper's filename (never a real font: FontAwesome ships fa-solid-900)
           while IFS= read -r f; do hit "known dropper filename" "$f"; done < <(
@@ -48,7 +48,7 @@ jobs:
           # 6. attacker tooling names left in .gitignore
           while IFS= read -r f; do hit "attacker .gitignore litter" "$f"; done < <(
             grep -rlE 'temp_auto_push|temp_interactive_push|branch_structure\.json' . \
-              --include='.gitignore' --exclude-dir=.git 2>/dev/null)
+              --include='.gitignore' --exclude-dir=.git --exclude=implant-scan.yml 2>/dev/null)
 
           if [ "$fail" -ne 0 ]; then
             echo "IMPLANT INDICATORS FOUND — do not merge, do not run builds from this tree."
